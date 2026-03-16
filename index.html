@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Explora el Sistema Solar — animaciones interactivas, datos reales y una experiencia visual inmersiva."/>
+    <meta name="theme-color" content="#050510"/>
+    <title>COSMOS — Sistema Solar</title>
+
+
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="stars" aria-hidden="true">
+    <div class="stars__layer stars__layer--sm"></div>
+    <div class="stars__layer stars__layer--md"></div>
+    <div class="stars__layer stars__layer--lg"></div>
+</div>
+
+
+<header class="header" role="banner">
+    <nav class="nav" aria-label="Navegación principal">
+        <a href="#inicio" class="nav__logo" aria-label="COSMOS — inicio">
+            COSMOS
+        </a>
+        <button class="nav__toggle" aria-label="Abrir menú" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav__links" id="nav-links" role="list">
+            <li><a class="nav__link" href="#sistema">Sistema</a></li>
+            <li><a class="nav__link" href="#planetas">Planetas</a></li>
+            <li><a class="nav__link" href="#datos">Datos</a></li>
+            <li><a class="nav__link" href="#explorar">Explorar</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+
+        <div class="hero__text">
+            <span class="tag">Bienvenido al universo</span>
+            <h1 class="hero__title" id="hero-title">
+                El <em>Sistema</em> Solar
+            </h1>
+            <p class="hero__desc">
+                Ocho planetas. Miles de millones de kilómetros.
+                Una sola estrella que lo sostiene todo.
+            </p>
+            <a href="#sistema" class="btn btn--hero">Iniciar viaje</a>
+        </div>
+
+
+
+    <section class="section section--overview" id="sistema" aria-labelledby="overview-title">
+        <div class="section__left" id="overview" aria-labelledby="overview-title">
+            <div class="section__header">
+                <span class="tag">01 — El sistema</span>
+                <h2 class="section__title" id="overview-title">
+                    4 600 millones<br/>de años de historia
+                </h2>
+            </div>
+            <div class="section__body">
+                <p>
+                    Nuestro sistema solar se formó a partir de una nube de gas y polvo que colapsó
+                    bajo su propia gravedad. Del 99,8% de esa masa nació el Sol. Del resto, todo lo demás.
+                </p>
+                <p>
+                    Ocho planetas, decenas de lunas, millones de asteroides y cometas orbitan
+                    sin descanso alrededor de nuestra estrella.
+                </p>
+            </div>
+        </div>
+        <div class="section__right">
+            <div class="orrery" id="orrery" role="img" aria-label="Sistema Solar en 3D"></div>
+        </div>
+    </section>
+
+    <section class="section section--sizes" id="tamaños">
+        <header class="section__header">
+            <span class="tag">02 — Tamaños comparativos</span>
+            <h2 class="section__title">Todo es relativo<br/>al Sol</h2>
+        </header>
+
+        <div class="size-strip">
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="sun"></div>
+                <span class="size-strip__label">Sol</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="jupiter"></div>
+                <span class="size-strip__label">Júpiter</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="saturn"></div>
+                <span class="size-strip__label">Saturno</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="uranus"></div>
+                <span class="size-strip__label">Urano</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="neptune"></div>
+                <span class="size-strip__label">Neptuno</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="earth"></div>
+                <span class="size-strip__label">Tierra</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="venus"></div>
+                <span class="size-strip__label">Venus</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="mars"></div>
+                <span class="size-strip__label">Marte</span>
+            </div>
+            <div class="size-strip__item">
+                <div class="size-strip__body" data-planet="mercury"></div>
+                <span class="size-strip__label">Mercurio</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--planets" id="planetas" aria-labelledby="planets-title">
+
+        <header class="section__header">
+            <span class="tag">03 — Los planetas</span>
+            <h2 class="section__title" id="planets-title">
+                Ocho mundos,<br/>ocho historias
+            </h2>
+        </header>
+
+        <!-- data-planet en cada card para variantes de color/textura CSS -->
+        <ul class="planets-grid" role="list">
+
+            <li class="planet-card" data-planet="mercury" tabindex="0" aria-label="Mercurio — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Mercurio</h3>
+                        <span class="planet-card__order">Planeta I</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Mercurio</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>4 879 km</dd>
+                            <dt>Día</dt>        <dd>59 días</dd>
+                            <dt>Año</dt>        <dd>88 días</dd>
+                            <dt>Temp. máx.</dt> <dd>430 °C</dd>
+                            <dt>Lunas</dt>      <dd>0</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+            <li class="planet-card" data-planet="venus" tabindex="0" aria-label="Venus — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Venus</h3>
+                        <span class="planet-card__order">Planeta II</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Venus</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>12 104 km</dd>
+                            <dt>Día</dt>        <dd>243 días</dd>
+                            <dt>Año</dt>        <dd>225 días</dd>
+                            <dt>Temp. media</dt><dd>465 °C</dd>
+                            <dt>Lunas</dt>      <dd>0</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+            <li class="planet-card" data-planet="earth" tabindex="0" aria-label="Tierra — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Tierra</h3>
+                        <span class="planet-card__order">Planeta III</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Tierra</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>12 742 km</dd>
+                            <dt>Día</dt>        <dd>24 h</dd>
+                            <dt>Año</dt>        <dd>365 días</dd>
+                            <dt>Temp. media</dt><dd>15 °C</dd>
+                            <dt>Lunas</dt>      <dd>1</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+            <li class="planet-card" data-planet="mars" tabindex="0" aria-label="Marte — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Marte</h3>
+                        <span class="planet-card__order">Planeta IV</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Marte</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>6 779 km</dd>
+                            <dt>Día</dt>        <dd>24 h 37 min</dd>
+                            <dt>Año</dt>        <dd>687 días</dd>
+                            <dt>Temp. media</dt><dd>−60 °C</dd>
+                            <dt>Lunas</dt>      <dd>2</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+            <li class="planet-card" data-planet="jupiter" tabindex="0" aria-label="Júpiter — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Júpiter</h3>
+                        <span class="planet-card__order">Planeta V</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Júpiter</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>139 820 km</dd>
+                            <dt>Día</dt>        <dd>9 h 56 min</dd>
+                            <dt>Año</dt>        <dd>11,9 años</dd>
+                            <dt>Temp. media</dt><dd>−108 °C</dd>
+                            <dt>Lunas</dt>      <dd>95</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+            <li class="planet-card" data-planet="saturn" tabindex="0" aria-label="Saturno — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <div class="planet-card__ring" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Saturno</h3>
+                        <span class="planet-card__order">Planeta VI</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Saturno</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>116 460 km</dd>
+                            <dt>Día</dt>        <dd>10 h 42 min</dd>
+                            <dt>Año</dt>        <dd>29,5 años</dd>
+                            <dt>Temp. media</dt><dd>−139 °C</dd>
+                            <dt>Lunas</dt>      <dd>146</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+            <li class="planet-card" data-planet="uranus" tabindex="0" aria-label="Urano — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Urano</h3>
+                        <span class="planet-card__order">Planeta VII</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Urano</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>50 724 km</dd>
+                            <dt>Día</dt>        <dd>17 h 14 min</dd>
+                            <dt>Año</dt>        <dd>84 años</dd>
+                            <dt>Temp. media</dt><dd>−195 °C</dd>
+                            <dt>Lunas</dt>      <dd>27</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+            <li class="planet-card" data-planet="neptune" tabindex="0" aria-label="Neptuno — haz clic para ver datos">
+                <div class="planet-card__inner">
+                    <div class="planet-card__front">
+                        <div class="planet-card__sphere" aria-hidden="true"></div>
+                        <h3 class="planet-card__name">Neptuno</h3>
+                        <span class="planet-card__order">Planeta VIII</span>
+                    </div>
+                    <div class="planet-card__back" aria-hidden="true">
+                        <h3 class="planet-card__back-title">Neptuno</h3>
+                        <dl class="planet-card__data">
+                            <dt>Diámetro</dt>   <dd>49 244 km</dd>
+                            <dt>Día</dt>        <dd>16 h 6 min</dd>
+                            <dt>Año</dt>        <dd>165 años</dd>
+                            <dt>Temp. media</dt><dd>−201 °C</dd>
+                            <dt>Lunas</dt>      <dd>16</dd>
+                        </dl>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <section class="section section--data" id="datos" aria-labelledby="data-title">
+
+        <header class="section__header section__header--center">
+            <span class="tag">04 — Números que asustan</span>
+            <h2 class="section__title" id="data-title" class="sr-only">Datos del Sistema Solar</h2>
+        </header>
+
+        <ul class="data-grid" role="list">
+
+            <li class="data-card">
+                <!-- data-target: valor final del counter -->
+                <span class="data-card__num" data-target="149600000" aria-label="149 millones de kilómetros">0</span>
+                <span class="data-card__unit">km</span>
+                <span class="data-card__label">Distancia Tierra → Sol</span>
+            </li>
+
+
+            <li class="data-card">
+                <span class="data-card__num" data-target="8" aria-label="8 minutos">0</span>
+                <span class="data-card__unit">minutos</span>
+                <span class="data-card__label">Luz Solar → Tierra</span>
+            </li>
+
+            <li class="data-card">
+                <span class="data-card__num" data-target="1300000" aria-label="1 millón 300 mil Tierras">0</span>
+                <span class="data-card__unit">Tierras</span>
+                <span class="data-card__label">caben en el Sol</span>
+            </li>
+
+            <li class="data-card">
+                <span class="data-card__num" data-target="4600" aria-label="4600 millones de años">0</span>
+                <span class="data-card__unit">M. años</span>
+                <span class="data-card__label">Edad del sistema</span>
+            </li>
+
+        </ul>
+
+    </section>
+
+    <section class="section section--cta" id="explorar" aria-labelledby="cta-title">
+        <div class="cta__content">
+            <span class="tag">04 — ¿Y más allá?</span>
+            <h2 class="cta__title" id="cta-title">
+                El universo tiene<br/>
+                <em>2 billones</em> de galaxias más.
+            </h2>
+            <p class="cta__desc">
+                Estamos apenas comenzando a entender dónde estamos.
+            </p>
+            <a href="#inicio" class="btn btn--cta">Volver al inicio </a>
+        </div>
+        <div id="planeta-cta"></div>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+    <span class="footer__logo"> COSMOS</span>
+    <small class="footer__copy">Proyecto educativo — Sistema Solar · 2024</small>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="main.js"></script>
+<script src="orrery.js"></script>
+<svg style="display: none">
+    <filter id="navbar-glass" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008"
+                      numOctaves="2" seed="92" result="noise" />
+        <feGaussianBlur in="noise" stdDeviation="0.02" result="blur" />
+        <feDisplacementMap in="SourceGraphic" in2="blur"
+                           scale="77" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+</svg>
+</body>
+</html>
