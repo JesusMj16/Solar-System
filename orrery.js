@@ -1,10 +1,10 @@
 setTimeout(() => {
 
-    // ── ORRERY ───────────────────────────────────────────────
+    
     const escena     = new THREE.Scene()
     const contenedor = document.getElementById('orrery')
     const ancho      = contenedor.clientWidth
-    const alto       = Math.min(ancho, 500)
+    const alto = contenedor.clientHeight
 
     const camara   = new THREE.PerspectiveCamera(60, ancho / alto, 0.1, 1000)
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
@@ -72,7 +72,7 @@ setTimeout(() => {
 
     window.addEventListener('resize', () => {
         const nuevoAncho = contenedor.clientWidth
-        const nuevoAlto  = Math.min(nuevoAncho, 500)
+        const nuevoAlto = contenedor.clientHeight
         camara.aspect    = nuevoAncho / nuevoAlto
         camara.updateProjectionMatrix()
         renderer.setSize(nuevoAncho, nuevoAlto)
