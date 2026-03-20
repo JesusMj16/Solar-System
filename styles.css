@@ -236,7 +236,6 @@ body{
     transition: color 0.4s ease;
 }
 
-/* El fondo que se desliza al hacer hover */
 .btn--hero::before {
     content: '';
     position: absolute;
@@ -279,7 +278,7 @@ body{
 
 .section__left {
     flex: 1;
-    max-width: 580px;
+    max-width: 500px;
 }
 /*Seccion 1 overview */
 .section__right {
@@ -675,6 +674,7 @@ body{
     }
 
     .section__left {
+        width: 270px;
         max-width: 100%;
     }
 
@@ -692,7 +692,7 @@ body{
 
     .section--sizes {
         padding: 3rem 1.5rem;
-        max-width: 400px;
+        max-width: 300px;
         overflow-x: auto;
         scrollbar-width: none;
     }
